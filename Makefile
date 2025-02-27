@@ -1,8 +1,10 @@
-.DEFAULT_GOAL := run
+.DEFAULT_GOAL := all
+
+all: clean build run
 
 build:
 	mkdir -p build
-	g++ -g -O3 -Ifparser4.5.2 main.cpp fparser4.5.2/fparser.cc fparser4.5.2/fpoptimizer.cc -o build/output_solution
+	g++ -g -O3 -Ifparser main.cpp fparser/fparser.cc fparser/fpoptimizer.cc -o build/output_solution
 
 run: build
 	./build/output_solution
